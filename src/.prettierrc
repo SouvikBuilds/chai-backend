@@ -1,0 +1,7 @@
+{
+    "signleQuote": false,
+    "bracketSpacing": true,
+    "tabwidth": 2,
+    "trailingoComma": "es5",
+    "semi": true
+}

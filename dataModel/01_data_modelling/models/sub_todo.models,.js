@@ -1,0 +1,24 @@
+import mongoose from "mongoose";
+
+const subTodoSchema = new mongoose.Schema(
+  {
+    content: {
+      type: String,
+      required: true,
+    },
+    complete: {
+      type: Boolean,
+      default: false,
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  },
+  { timestamps: true }
+);
+
+// Use PascalCase for model name
+const subTodo = mongoose.model("subTodo", subTodoSchema);
+
+export default subTodo;

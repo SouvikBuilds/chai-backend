@@ -1,6 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
-const { resolve } = require("path");
+import { resolve, dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const port = 3010;

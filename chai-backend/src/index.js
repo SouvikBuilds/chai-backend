@@ -7,7 +7,15 @@ dotenv.config({
   path: "./env",
 });
 
-connectDB();
+connectDB()
+  .then(() => {
+    app.lisen(process.env.PORT || 8000, () => {
+      console.log(`App Listening On https://localhost:${process.env.PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log("MONGODB Connection Failed !!!");
+  });
 
 // import express from "express";
 // const app = express()(async () => {
